@@ -30,7 +30,7 @@
     self.tableView.delegate   = self.manager;
     self.manager.delegate = self;
     [self.manager setCallBackblock:^(UITableViewCell *cell, MVVMManagerCellEntity *entity, NSIndexPath *indexPath) {
-        TestModel  *model = (TestModel*)entity.dataList[indexPath.row];
+        TestModel  *model = (TestModel*)entity.dataList[indexPath.section];
         cell.textLabel.numberOfLines = 0;
         cell.textLabel.text = model.content;
         
