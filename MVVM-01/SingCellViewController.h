@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class Teacher;
+
 @interface SingCellViewController : UIViewController
+
+@end
+
+
+@interface Teacher  :NSObject
+
+@property   (nonatomic,copy)   NSString  *name;
+@property   (nonatomic,copy)   NSString  *content;
 
 @end

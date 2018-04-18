@@ -8,7 +8,7 @@
 
 #import "SingCellViewController.h"
 #import "TestModel.h"
-
+#import <MJExtension.h>
 @interface SingCellViewController ()<MVVMManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)  MVVMManager  *manager;
@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    Teacher *ss =  [Teacher mj_objectWithKeyValues:@{@"name":@"fsdfs",@"content":@"fff"}];
     self.title = @"单层Cell测试";
     self.tableView.dataSource = self.manager;
     self.tableView.delegate   = self.manager;
@@ -60,3 +61,10 @@
 }
 
 @end
+
+
+@implementation Teacher
+
+
+@end
+

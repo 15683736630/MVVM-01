@@ -65,7 +65,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e1Y-QB-AVN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="p30-Dp-RiC"/>
+                    <navigationItem key="navigationItem" id="p30-Dp-RiC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="1tU-1K-alo">
+                            <connections>
+                                <action selector="refreshData:" destination="0QT-7O-O6q" id="c5a-Tc-49s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="lgQ-jr-Yd9" id="G4w-tW-E2O"/>
                     </connections>

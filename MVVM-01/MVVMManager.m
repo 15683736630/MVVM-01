@@ -13,7 +13,7 @@
 @property  (nonatomic,copy)  NSArray     *datas;
 @property  (nonatomic,assign)   BOOL   isManyCellStyle; //是否是多种样式的Cell
 @property  (nonatomic,strong)   MVVMManagerCellEntity   *singleEntity; //单种样式的时候用到
-
+ 
 @end
 
 @implementation MVVMManager
@@ -73,7 +73,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
     return  self.isManyCellStyle ? ((MVVMManagerCellEntity*)self.datas[section]).dataList.count:1;
 }
 
@@ -98,9 +97,6 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.isManyCellStyle) {
         MVVMManagerCellEntity *entity = self.datas[indexPath.section];
-        if ([entity.Identifier isEqualToString:NSStringFromClass([UITableViewCell class])]) {
-            return UITableViewAutomaticDimension;
-        }
         return ((MVVMBaseSectionModel*)entity.dataList[indexPath.row]).cellHeight ?:UITableViewAutomaticDimension;
     }
     MVVMBaseSectionModel  *sectionModel = self.datas[indexPath.section];

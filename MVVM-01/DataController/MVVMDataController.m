@@ -9,6 +9,7 @@
 #import "MVVMDataController.h"
 #import "TestModel.h"
 #import "HeaderView.h"
+#import <MJExtension.h>
 
 
 @implementation MVVMDataController
@@ -19,6 +20,7 @@
     dispatch_group_t downloadGroup = dispatch_group_create();
     dispatch_group_enter(downloadGroup);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        sleep(arc4random_uniform(10)*0.01);
         MVVMManagerCellEntity *entity1 = [[MVVMManagerCellEntity alloc]init];
         entity1.Identifier = @"OneCell";
         NSDictionary  *dic = @{@"name":@(111),@"content":@"大家都拉开始就暗示健康大了空间大撒来得及阿来得及阿斯兰的骄傲手榴弹"};
@@ -31,6 +33,7 @@
     });
     dispatch_group_enter(downloadGroup);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        sleep(arc4random_uniform(10)*0.01);
         TestModel  *ts = [TestModel new];
         ts.cellHeight = 160;
         [entitys addObject:[MVVMManagerCellEntity newInstantiationEmtityWithIdentifier:@"TwoCell" DataList:@[ts]]];
@@ -41,6 +44,7 @@
     
     dispatch_group_enter(downloadGroup);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        sleep(arc4random_uniform(10)*0.01);
         MVVMManagerCellEntity *entity = [[MVVMManagerCellEntity alloc]init];
         NSMutableArray  *mAry = [NSMutableArray arrayWithCapacity:0];
         for (int i = 0; i < 10; i ++) {

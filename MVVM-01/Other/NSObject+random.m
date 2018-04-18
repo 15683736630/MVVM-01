@@ -68,7 +68,7 @@
 +(NSMutableArray*)HH_objectArrayWithKeyValuesArray:(NSArray<NSDictionary*>*)arr{
     NSMutableArray  *mAry = [NSMutableArray arrayWithCapacity:0];
     [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [mAry addObject:[NSObject HH_ObjectlWithDictionary:obj]];
+        [mAry addObject:[[self class] HH_ObjectlWithDictionary:obj]];
     }];
     return mAry;
 }

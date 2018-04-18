@@ -36,6 +36,8 @@
     self.title = @"MVVM测试";
     self.tableView.dataSource = self.manager;
     self.tableView.delegate   = self.manager;
+    self.tableView.estimatedRowHeight = UITableViewAutomaticDimension;
+    self.tableView.rowHeight = 100;
     self.manager.delegate = self;
     [self HH_ConfigurationData];
     __weak __typeof__(self) weakSelf = self;
@@ -60,6 +62,10 @@
         [self.manager addDatas:datas registeredCellWithTableView:self.tableView];
     }];
 }
+- (IBAction)refreshData:(id)sender {
+    [self HH_ConfigurationData];
+}
+
 #pragma mark --  MVVMManagerDelegate
 
 -(void)noticeDataChange{
